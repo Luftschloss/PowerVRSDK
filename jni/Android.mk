@@ -7,15 +7,11 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE	 := PVRScopeDeveloper
 
-#STATIC_LIB
-#LOCAL_SRC_FILES  := $(3RD_LIB_DIR)/$(TARGET_ARCH_ABI)/Static/libPVRScopeDeveloper.a
-#DYNAMIC_LIB
-LOCAL_SRC_FILES  := $(3RD_LIB_DIR)/$(TARGET_ARCH_ABI)/Dynamic/libPVRScopeDeveloper.so
+LOCAL_SRC_FILES  := $(3RD_LIB_DIR)/$(TARGET_ARCH_ABI)/Static/libPVRScopeDeveloper.a
+#LOCAL_SRC_FILES  := $(3RD_LIB_DIR)/$(TARGET_ARCH_ABI)/Dynamic/libPVRScopeDeveloper.so
 
-#STATIC_LIB
-#include $(PREBUILT_STATIC_LIBRARY)
-#DYNAMIC_LIB
-include $(PREBUILT_SHARED_LIBRARY)
+include $(PREBUILT_STATIC_LIBRARY)
+#include $(PREBUILT_SHARED_LIBRARY)
 
 #Build Target
 include $(CLEAR_VARS)
@@ -28,10 +24,8 @@ LOCAL_C_INCLUDES := $(3RD_INC_DIR) $(LOCAL_PATH)/src
 LOCAL_CFLAGS :=	-DANDROID
 LOCAL_LDLIBS := -ldl -llog 
 
-#STATIC_LIB
-#LOCAL_STATIC_LIBRARIES := PVRScopeDeveloper 
-#DYNAMIC_LIB
-LOCAL_SHARED_LIBRARIES := PVRScopeDeveloper 
+LOCAL_STATIC_LIBRARIES := PVRScopeDeveloper 
+#LOCAL_SHARED_LIBRARIES := PVRScopeDeveloper 
 
 LOCAL_LDFLAGS += -Wl,--no-undefined
 
